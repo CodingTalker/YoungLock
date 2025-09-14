@@ -6,7 +6,6 @@ add_executable(test_encryptor
     test_encryptor.cpp
     # ...如需测试SDK实现可加 ../sdk/encryptor.cpp ...
 )
-target_include_directories(test_encryptor PRIVATE ../sdk/include)
 target_link_libraries(test_encryptor GTest::GTest GTest::Main Threads::Threads)
 
 enable_testing()
