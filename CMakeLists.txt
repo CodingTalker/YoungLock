@@ -4,9 +4,18 @@ project(YoungLock)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
+add_subdirectory(extern/CLI11)
+include_directories(include/private)
+include_directories(include/younglock_api)
 # packaging目录不参与编译，仅用于打包交付
-add_subdirectory(src/cli)
+add_executable(younglock
+    src/cli/help.cpp
+    src/cli/parser.cpp
+    src/cli/main.cpp
+)
 
+# 链接CLI11
+target_link_libraries(younglock PRIVATE CLI11::CLI11)
 # TODO:调整以及验证安装命令是否有效
 # 安装命令行工具到系统路径
 # install(TARGETS younglock RUNTIME DESTINATION bin)

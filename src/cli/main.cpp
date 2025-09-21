@@ -1,6 +1,5 @@
-#include <iostream>
-int main(int argc, char* argv[]) {
-    // 解析命令行参数，调用加密/解密等功能
-    std::cout << "hello world" << std::endl;
-    return 0;
+#include "cli.h"
+
+int main(int argc, char** argv) {
+    return younglock::cli::parse_command_line(argc, argv);
 }
