@@ -9,6 +9,7 @@ include_directories(include/private)
 include_directories(include/younglock_api)
 # packaging目录不参与编译，仅用于打包交付
 add_executable(younglock
+    src/younglock_api/younglock_api.cpp
     src/cli/help.cpp
     src/cli/parser.cpp
     src/cli/main.cpp
